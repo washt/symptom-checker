@@ -94,6 +94,8 @@ function SymptomChecker() {
     
   return (
       <div className="App-container">
+        <img src="https://assets.website-files.com/600886e2dc64ccedc74f294f/6244c097bb50ad3d007c640d_logo-genetic-vector.svg" loading="lazy" alt="" class="nav__logo" width="304" height="310"></img>
+        <h1>Symptom Checker</h1>
         <ul className="App-diorders-links">
           { disorders.length > 0 && <h2>Disorders</h2>}
           { disorders && disorders.map((result) => { 
@@ -101,8 +103,7 @@ function SymptomChecker() {
               <li className="App-disorders-item"
               // @TODO add uniq key prop to all list items
                 key={result.hpo_id}>
-                <p>{result[0]}</p>
-                <a href={result[1]} target="_blank">result[1]</a>
+                <a href={result[1]} target="_blank"><p>{result[0]}</p></a>
               </li>
             ); 
           })}
@@ -114,25 +115,24 @@ function SymptomChecker() {
                 <li className="App-results-item"
                     key={result.hpo_id}>
                             {result.name}
-                            <button className="App-selected-symptom-remove" onClick={() => removeSymptom(idx)}>Remove</button>
+                            <button className="App-selected-symptom-remove button" onClick={() => removeSymptom(idx)}>Remove</button>
                 </li>
               );
           })}
         </ul>
-        <h1>Symptom Checker</h1>
-        <input type="text" value={query} onChange={onSearch}/>
+        <textarea type="text" value={query} onChange={onSearch} placeholder="Enter Symptom"/>
         <ul className="App-results">
           { results && results.map((result) => {
               return(
                 <li className="App-results-item"
                     key={result.item.hpo_id}>
                             {result.item.name}
-                            <button className="App-results-item-add" onClick={() => addSymptom(result.item)}>Add Symptom</button>
+                            <button className="App-results-item-add button" onClick={() => addSymptom(result.item)}>Add Symptom</button>
                 </li>
               );
           })}
         </ul>
-        <button onClick={() => queryDisorders()}>Search</button>
+        <button className="App-disorders-query-submit button" onClick={() => queryDisorders()}>Search</button>
       </div>
   );
 }

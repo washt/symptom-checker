@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: 'IBM Plex Mono';
 }
 
 .App-container {
@@ -11,6 +12,32 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.App-results-item, .App-disorders-item {
+  list-style:none;
+}
+
+.App-results-item-add, .App-selected-symptom-remove{
+  margin-left: 7px;
+}
+
+.button {
+  background-color:  #282c34;
+  border: solid;
+  color: white;
+  /* padding: 15px 32px; */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  font-size: 23px;
+}
+
+textarea {
+  width: 500px;
+  height: 150px;
+  font-size: 32px;
 }
 /* 
 .App-link {
