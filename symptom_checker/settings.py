@@ -37,9 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'djangorestframework',
+    'rest_framework',
     'corsheaders',
-    'rare_conditions'
+    'rare_conditions',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +54,8 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_WHITELIST = [
-     'http://localhost:3000'
+     'http://localhost:8000',
+     'http://localhost:3000',
 ]
 
 ROOT_URLCONF = 'symptom_checker.urls'
